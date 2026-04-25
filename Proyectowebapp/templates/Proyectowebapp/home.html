@@ -1,0 +1,43 @@
+{% extends "Proyectowebapp/base.html" %}
+
+{% load static %}
+
+{% block content %}
+   <!-- Heading -->
+   <section class="page-section clearfix">
+    <div class="container">
+      <div class="intro">
+        <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{% static 'Proyectowebapp/img/imagen_fondo.jpg' %}" alt="">
+        <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+          <h2 class="section-heading mb-4" >
+            <span class="section-heading-upper">Sistema integrado para Manejo de Asadas</span>
+            <span class="section-heading-lower">Mejoramos para usted</span>
+          </h2>
+          <p class="mb-3">Estamos desarrollando nuestros sistemas para ubicarlos en la nube
+          </p>
+         
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  
+    <!-- Message -->
+    <section class="page-section cta">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-9 mx-auto">
+            <div class="cta-inner text-center rounded">
+              <h2 class="section-heading mb-4">
+                <span class="section-heading-upper">Compromiso total</span>
+                <span class="section-heading-lower">Garantizado</span>
+              </h2>
+              <p class="mb-0">Con más de 25 años de experiencia a nuestras espaldas, desde Gestión de Asadas tenemos los conocimientos y herramientas necesarios para ofrecerle sistemas para el cobro de agua, inventarios, planillas, compras, viaticos, aforos para el trabajo cotidiano de las asadas.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+{% endblock %}

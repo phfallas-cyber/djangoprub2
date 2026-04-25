@@ -1,0 +1,66 @@
+{% extends "Proyectowebapp/base.html" %}
+
+{% load static %}
+
+{% block content %}
+<h1 style="color: aliceblue;">Listado de abonados  </style> </h1>
+<!--<div class="row col 12 justify-content-end mb-2 pr-0">
+  <button type="button" class="btn btn-success">Success</button>
+</div>    este comando alinea a la derecha el boton-->
+<!-- <button type="button" class="btn btn-success col-md-3">Mostrar los Pendientes Ingresar</button>-->
+<div>
+<a class="btn btn-success col-md-3" href="{% url 'listar_pendientes' %}"> Mostrar Los Pendientes de Ingresar </a>
+<bnsp> </bnsp>
+<a class="btn btn-success col-md-3" href=""> Exportar hacia Excel </a>
+<!-- <a href=""> Exportar Listado a Excel</a> -->
+</div>
+<p>
+
+</p>
+<div>
+
+</div>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col" style="color: white;"> </th>
+      <th scope="col" style="color: white;">Abonadoid</th>
+      <th scope="col" style="color: white;">Nombre</th>
+      <th scope="col" style="color: white;">Lectura Anterior</th>
+      <th scope="col" style="color: white;">Lectura Actual</th>
+      <th scope="col" style="color: white;">Accion Disponible</th>
+      <th scope="col" style="color: white;">Observaciones</th>
+    </tr>
+  </thead>
+  <tbody class="table-group-divider">
+    {% for registro in lista_caragral %}
+    <tr>
+      <th scope="row" style="color: white;">{{ registro.ID }}</th>
+      <td style="color: white;">{{ registro.Abonadoid }}</td>
+      <td style="color: white;">{{ registro.Nombre }}</td>
+      <td style="color: white;">{{ registro.Lectura_anterior }}</td>
+      <td style="color: white;">{{ registro.Lectura_actual }}</td>
+      <td><a class="btn bth-warning" style="background-color: rgb(6, 70, 6);color: white;" href="{% url 'editarabonado' registro.id %}" > Modificar </a></td> 
+      <td style="color: white;">{{ registro.Observacion }}</td>
+    </tr>
+    {% endfor %}
+   <!-- <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>John</td>
+      <td>Doe</td>
+      <td>@social</td>
+    </tr>  -->
+  </tbody>
+</table>
+
+<div>
+    <p>   </p>
+</div>
+
+{% endblock %}

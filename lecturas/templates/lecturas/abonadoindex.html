@@ -1,0 +1,44 @@
+{% extends "Proyectowebapp/base.html" %}
+
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<div>
+    <p>   </p>
+</div>
+<div class="content container">
+    {% if form.errors %}
+        <div class="alert alert-danger" role="alert">
+            Ha pasado algo..!! alert—check it out!
+        </div>
+
+    {% endif %}
+
+    <h1 style="color: white;"> Registro de Abonado</h1>
+    <div class="row">
+        <div class="col-12 col-md-6 offset-md-3"> <!-- este comando acomoda el formulario en pantalla  -->
+           <div class="card">
+                <div class="card-body">
+                <form action="{% url 'guardarAbonado' %}" method="post">
+                    {% csrf_token %}
+                    {% if mensaje %}
+                    <div class="alert alert-success" role="alert">
+                        Abonado registrado exitosamente..!!!
+                    </div>
+                    {% endif %}
+       
+                    {{ form|crispy}} 
+
+                    <button type="submit" style="color: white; background-color: rgb(42, 80, 54);" class="btn btn-success">Guardar</button>
+
+                </form> 
+                </div>
+           </div>
+           
+        </div>
+    </div>
+    
+</div>
+{% endblock %}
